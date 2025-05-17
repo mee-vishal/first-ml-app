@@ -1,160 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Career Companion</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #f5f7fa;
-    }
+{% extends "base.html" %}
+{% block title %}Home - CareerBoost{% endblock %}
 
-    nav {
-      background: #4b6cb7;
-      background: linear-gradient(to right, #182848, #4b6cb7);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-    }
+{% block content %}
+<div class="text-center my-5">
+    <h1 class="display-4">Welcome to <span style="color:#0d6efd;">CareerBoost</span></h1>
+    <p class="lead">Your one-stop solution for placement preparation, resume optimization, and career tools.</p>
+    <img src="{{ url_for('static', filename='images/career_path.png') }}" class="img-fluid my-4" style="max-height: 400px;" alt="Career Growth">
+</div>
 
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #ffd369;
-    }
-
-    header {
-      padding: 80px 20px;
-      text-align: center;
-      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      color: white;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .features {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      padding: 60px 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 280px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card img {
-      width: 60px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .card a {
-      display: inline-block;
-      margin-top: 15px;
-      text-decoration: none;
-      color: #4b6cb7;
-      font-weight: bold;
-    }
-
-    footer {
-      background: #182848;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <div class="logo">Career Companion</div>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/predict">Placement Predictor</a></li>
-      <li><a href="#">Resume Optimizer</a></li>
-      <li><a href="#">More Tools</a></li>
-    </ul>
-  </nav>
-
-  <header>
-    <h1>Your AI-Powered Career Assistant</h1>
-    <p>Predict placements, optimize your resume, and explore tools to boost your professional journey!</p>
-  </header>
-
-  <section class="features">
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/189/189664.png" alt="predict icon" />
-      <h3>Placement Predictor</h3>
-      <p>Get insights into your placement chances based on CGPA, internships, and more.</p>
-      <a href="/predict">Try Now →</a>
+<div class="row text-center mt-5">
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">📈 Placement Predictor</h5>
+                <p class="card-text">Estimate your placement chances based on your profile metrics like CGPA, projects, and more.</p>
+                <a href="/predict" class="btn btn-primary">Try Now</a>
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="resume icon" />
-      <h3>Resume Optimizer</h3>
-      <p>Analyze and optimize your resume using smart AI algorithms.</p>
-      <a href="#">Coming Soon</a>
+    <div class="col-md-4 mt-4 mt-md-0">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">📝 Resume Optimizer</h5>
+                <p class="card-text">Get smart suggestions to improve your resume and stand out in interviews.</p>
+                <a href="#" class="btn btn-secondary">Coming Soon</a>
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/3771/3771287.png" alt="tool icon" />
-      <h3>More Career Tools</h3>
-      <p>We are building more tools to help you with aptitude, interviews and more!</p>
-      <a href="#">Explore</a>
+    <div class="col-md-4 mt-4 mt-md-0">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">🧰 More Tools</h5>
+                <p class="card-text">Explore upcoming tools like coding trackers, interview Q&A, and progress dashboards.</p>
+                <a href="#" class="btn btn-secondary">Coming Soon</a>
+            </div>
+        </div>
     </div>
-  </section>
+</div>
 
-  <footer>
-    © 2025 Career Companion. All rights reserved.
-  </footer>
-</body>
-</html>
+<div class="text-center mt-5">
+    <h5 class="text-muted">Made with ❤️ for students by students</h5>
+</div>
+{% endblock %}
