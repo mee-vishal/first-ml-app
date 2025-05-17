@@ -36,7 +36,7 @@ def home():
         r2 = 0.82  # Example R2 score
         mae = 5.6  # Example MAE (% placement)
 
-    return render_template('index.html', prediction=prediction, r2=r2, mae=mae)
+    return render_template('base.html', prediction=prediction, r2=r2, mae=mae)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
