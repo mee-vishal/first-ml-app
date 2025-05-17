@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expenditure Predictor</title>
+</head>
+<body>
+    <h2>Predict Expenditure</h2>
+    <form action="/predict" method="post">
+        <label>Age:</label>
+        <input type="number" name="age" required><br><br>
+        <label>Income:</label>
+        <input type="number" name="income" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+
+    <h4>Model Accuracy (R² Score): {{ accuracy | round(3) }}</h4>
+</body>
+</html>
